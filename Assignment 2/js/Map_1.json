@@ -36,7 +36,7 @@
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "2002",
+      "field": "Students travelling to Australia in 2002",
       "type": "quantitative",
       "scale": {
         "type": "threshold",
