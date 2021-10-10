@@ -31,18 +31,19 @@
           "key": "Nationality",
           "fields": ["2002"]
                 } 
-      }
+      },
+      {"calculate": "datum['2002'] * 0.1", "as": "Scaled Students"}
       
    ],
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Scaled Students",
+      "field": "2002",
       "title": "Students",
       "type": "quantitative",
       "scale": {
         "type": "threshold",
-        "domain": [200, 400, 60000, 80000],
+        "domain": [500, 1000, 15000, 20000],
         "range": ["#feebe2","#fbb4b9","#f768a1","#c51b8a","#7a0177"]
                }
               },

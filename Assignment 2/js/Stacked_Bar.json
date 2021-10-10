@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 2000,
+    "height": 600,
+    "title": "Students travelling to Australia",
+    "data": {
+    "url":
+    "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_1.csv"
+      },
+      "params": [
+        {
+          "name": "Year_Above",
+          "value": 0,
+          "bind": {
+            "input": "range",
+            "min": 2002,
+            "max": 2021,
+            "step": 1,
+            "name": "Year"
+         }}
+        ],
+      "transform": [
+        {"filter": "datum['2002'] > Year_Above"},
+          {
+                "calculate": "datum['2002'] * 0.10","as": "Scaled Students"          
+          }],
+      "selection": {
+            "nationality_highlight": {
+            "type": "multi",
+            "fields": ["Nationality"],
+            "bind": "legend"
+        }
+      },
+      "mark": "circle",
+"encoding": {
+    "x": {
+      "field": "Nationality",
+      "type": "nominal",
+      "title": "Year"
+}, "y": {
+      "field": "2002",
+      "type": "quantitative"
+}, "color": {
+      "field": "Nationality",
+      "type": "nominal"
+},"opacity": {
+    "condition": {"selection": "nationality_highlight", "value": 0.6},
+    "value": 0.2
+}, "size": {
+      "field": "2002",
+       "type": "quantitative"
+},
+       "tooltip": [
+        {"field": "Nationality", "type": "nominal"},
+        {"field": "2002", "type": "quantitative", "format": ","},
+        {
+        "field": "Scaled Students", "type": "quantitative",
+        "format": ".2f"
+        } ]
+}
+}
+
