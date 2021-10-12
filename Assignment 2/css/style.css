@@ -19,8 +19,11 @@
 }
 
 p {
-  text-align: center;
+  text-align: left;
 }
 .section1 {
   background-color:lightcoral;
+}
+.introduction{ 
+  text-align: center;
 }

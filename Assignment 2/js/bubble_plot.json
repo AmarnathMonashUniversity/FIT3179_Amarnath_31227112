@@ -1,7 +1,7 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 2000,
-    "height": 600,
-    "title": "Students travelling to Australia",
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 500,
+    "height": 400,
+    "title": "International Students Travelling To Australia",
     "data": {
     "url":
     "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_1.csv"
@@ -9,19 +9,65 @@
       "params": [
         {
           "name": "Year_Above",
-          "value": 0,
+          "value": 2008,
           "bind": {
             "input": "range",
             "min": 2002,
             "max": 2021,
             "step": 1,
             "name": "Year"
-         }}
+         }},
+         {
+            "name": "Continent_selection",
+            "bind": {
+              "input": "select",
+              "options": [
+          null,
+            "Bangladesh",
+            "Canada",
+            "China",
+            "Hong Kong",
+            "India",
+            "Indonesia",
+            "Japan",
+            "Korea, Republic of (South)",
+            "Malaysia",
+            "Nepal",
+            "Norway",
+            "Singapore",
+            "Taiwan",
+            "Thailand",
+            "United Kingdom",
+            "United States of America",
+            "Vietnam"
+          ],
+          "labels":[
+            "Show All",
+            "Bangladesh",
+            "Canada",
+            "China",
+            "Hong Kong",
+            "India",
+            "Indonesia",
+            "Japan",
+            "Korea, Republic of (South)",
+            "Malaysia",
+            "Nepal",
+            "Norway",
+            "Singapore",
+            "Taiwan",
+            "Thailand",
+            "United Kingdom",
+            "United States of America",
+            "Vietnam"
+          ],
+          "name": "Continent Selection: "
+      }}
         ],
       "transform": [
         {"filter": "datum['2002'] > Year_Above"},
           {
-                "calculate": "datum['2002'] * 0.10","as": "Scaled Students"          
+                "calculate": "datum['2002'] * 10000","as": "Scaled Students"          
           }],
       "selection": {
             "nationality_highlight": {
@@ -37,7 +83,7 @@
       "type": "nominal",
       "title": "Year"
 }, "y": {
-      "field": "2002",
+      "field": "Scaled Students",
       "type": "quantitative"
 }, "color": {
       "field": "Nationality",
@@ -46,7 +92,7 @@
     "condition": {"selection": "nationality_highlight", "value": 0.6},
     "value": 0.2
 }, "size": {
-      "field": "2002",
+      "field": "Scaled Students",
        "type": "quantitative"
 },
        "tooltip": [
