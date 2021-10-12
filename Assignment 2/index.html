@@ -20,23 +20,32 @@
 <body>
   <h1>Student Migration from around the world and entering into Australia</h1>
   <p>
-    A visualisation by Amarnath Ilangovan>
+    A visualisation by Amarnath Ilangovan.
   </p>
-    <div class="page" style="color:teal">
+  <hr>
+  <p>
+    Do you know that international students in Australia occupy almost 40% of the student population. 
+    From this percentage, around 23.6% of students are currently studying on-campus. This is a much lower 
+    figure due to the coronavirus pandemic situation.
+  </p>
+    <div class="page">
+      <div class="section1">
         <h2>Map of Student Migration into Australia</h2>
+      </div>
             <div id="Map_1"></div>
             <script type="text/javascript">
               var spec2 = "js/Map_1.json";
               vegaEmbed('#Map_1', spec2).then(function(result) {
               }).catch(console.error);
             </script>
-            <hr>
             <br>
+      <div class="section1">
         <h2>Quantity of student Migration into Australia</h2>
+      </div>
             <div id="bubble_plot"></div>
             <script type="text/javascript">
-              var spec2 = "js/bubble_plot.json";
-              vegaEmbed('#bubble_plot', spec2).then(function(result) {
+              var spec3 = "js/bubble_plot.json";
+              vegaEmbed('#bubble_plot', spec3).then(function(result) {
               }).catch(console.error);
             </script>
      </div>

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+  "title": "International Students",
+  "width": 800,
+  "height": 600,
+    "data": {"url": "data/student_data.csv"},
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "timeUnit": {"unit": "year"},
+            "field": "date",
+            "type": "temporal"
+          },
+          "y": {"aggregate": "mean", "field": "price", "type": "quantitative"},
+          "color": {"field": "symbol", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "point", "opacity": 1, "filled": true},
+        "encoding": {
+          "x": {
+            "timeUnit": {"unit": "year"},
+            "field": "date",
+            "type": "temporal"
+          },
+          "y": {"aggregate": "mean", "field": "price", "type": "quantitative"},
+          "color": {"field": "symbol", "type": "nominal"}
+        }
+      }
+    ]
+  }

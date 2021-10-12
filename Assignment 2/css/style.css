@@ -4,7 +4,7 @@
 
 .page {
   width: 1024px;
-  background-color:lightcyan;
+  background-color:white;
   margin: auto;
   padding: 50px;
   padding-top: 10px;
@@ -16,4 +16,11 @@
   height: 2px;
   background-image: linear-gradient(to right, transparent, #DDD, transparent);
   padding-top: 5px;
+}
+
+p {
+  text-align: center;
+}
+.section1 {
+  background-color:lightcoral;
 }
