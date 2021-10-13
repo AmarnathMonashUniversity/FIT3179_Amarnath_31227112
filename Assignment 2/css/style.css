@@ -27,3 +27,6 @@ p {
 .introduction{ 
   text-align: center;
 }
+body {
+  background-color: lightblue;
+}

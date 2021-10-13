@@ -39,7 +39,7 @@
   "encoding": {
     "color": {
       "field": "2002",
-      "title": "Students",
+      "title": "Quantity of Students",
       "type": "quantitative",
       "scale": {
         "type": "threshold",

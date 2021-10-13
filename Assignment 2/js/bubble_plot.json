@@ -76,23 +76,26 @@
             "bind": "legend"
         }
       },
-      "mark": "circle",
+      "mark": "bar",
 "encoding": {
     "x": {
       "field": "Nationality",
       "type": "nominal",
-      "title": "Year"
+      "title": "Country",
+      "axis": {"tickCount":7}
 }, "y": {
-      "field": "Scaled Students",
-      "type": "quantitative"
+      "field": "2002",
+      "type": "quantitative",
+      "title":"Number of students",
+      "axis": {"tickCount": 10}
 }, "color": {
       "field": "Nationality",
       "type": "nominal"
 },"opacity": {
-    "condition": {"selection": "nationality_highlight", "value": 0.6},
+    "condition": {"selection": "nationality_highlight", "value": 1.0},
     "value": 0.2
 }, "size": {
-      "field": "Scaled Students",
+      "field": "2002",
        "type": "quantitative"
 },
        "tooltip": [
