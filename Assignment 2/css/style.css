@@ -26,6 +26,7 @@ p {
 }
 .introduction{ 
   text-align: center;
+  background-color: palegoldenrod;
 }
 body {
   background-color: lightblue;
