@@ -16,7 +16,7 @@
           }
         }
       ],
-    "projection": {"type":"azimuthalEqualArea"},
+    "projection": {"type":"mercator"},
     "data": {
     "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/js/STE_2016_AUST.json",
         "format": {"type": "topojson", "feature": "STE_2016_AUST"}
@@ -35,11 +35,11 @@
               },
               {
               "data": {
-                "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
+                "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_3.csv"
                       },
       "transform": [
         {
-          "lookup": "Year",
+          "lookup": "State",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/js/STE_2016_AUST.json",
@@ -63,7 +63,7 @@
       },
       "color": {
         "field": "year",
-        "title": "Quantity of Students",
+        "title": "Number of Students",
         "type": "quantitative",
         "scale": {
           "type": "threshold",
@@ -72,8 +72,8 @@
                  }
                 },
       "tooltip": [
-      {"field": "Year", "type": "nominal", "title": "Nationality"},
-      {"field": "year", "type": "quantitative","title":"No. of students travelled to Australia"} 
+      {"field": "State", "type": "nominal", "title": "State"},
+      {"field": "year", "type": "quantitative","title":"No. of international students"} 
       ]
                 } 
             } 

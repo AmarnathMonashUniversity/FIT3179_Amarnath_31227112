@@ -1,5 +1,6 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 500,
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+    "width": 500,
     "height": 400,
     "title": "International Students Travelling To Australia",
     "data": {
