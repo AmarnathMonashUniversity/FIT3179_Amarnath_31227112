@@ -6,7 +6,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
     },
-    "mark": "circle",
+    "mark": "point",
     "encoding": {
       "x": {
         "field": "Enrolment",
@@ -18,7 +18,8 @@
         "type": "quantitative",
         "scale": {"zero": false}
       },
-      "color": {"field": "Year", "type": "nominal"},
-      "size": {"field": "NSW", "type": "quantitative"}
+      "color": {"field": "State", "type": "nominal"},
+      "shape":{"field": "State", "type": "nominal"},
+      "size": {"field": "Enrolment", "type": "quantitative"}
     }
   }
