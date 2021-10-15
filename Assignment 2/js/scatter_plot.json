@@ -6,7 +6,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
     },
-    "mark": "point",
+    "mark": "circle",
     "encoding": {
       "x": {
         "field": "Enrolment",
