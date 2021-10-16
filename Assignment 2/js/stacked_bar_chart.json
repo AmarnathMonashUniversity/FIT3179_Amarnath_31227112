@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data4.csv"
+    },
+    "width":"container",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "timeUnit": "year",
+        "type": "ordinal"
+      },
+      "y": {
+        "aggregate": "count",
+        "stack": "normalize"
+      },
+      "color": {
+        "type":"nominal",
+        "field": "State",
+        "scale": {
+          "domain": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory",
+            "Other Territories"
+          ],
+          "range": [
+            "#e7ba52",
+            "#c7c7c7",
+            "#aec7e8",
+            "#1f77b4",
+            "#9467bd"
+          ]
+        },
+        "title": "Student at each state"        
+      }
+    },
+    "config": {}
+  }
