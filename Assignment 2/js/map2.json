@@ -14,9 +14,14 @@
           "step": 1,
           "name": "Year:  "
         }
+      },
+      {
+        "name": "zoom_level", "value": 120, "bind": {
+          "input": "range", "min": 60, "max": 200, "step": 20, "name": "Zoom level: "
+      }
       }
     ],
-  "projection": {"type": "equirectangular"},
+  "projection": {"type": "equirectangular","scale": {"expr": "zoom_level"}},
   "data": {
   "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/js/ne_world_110m.json",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -79,5 +84,4 @@
           } 
                   ],
                   "config": {}
-  
 }
