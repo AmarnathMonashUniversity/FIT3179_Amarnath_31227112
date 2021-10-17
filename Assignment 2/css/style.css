@@ -1,10 +1,18 @@
+.body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+}
+
 .vis-container {
   width: 100%;
 }
 
 .page {
   width: 1024px;
-  background-color:white;
+  background-color:transparent;
   margin: auto;
   padding: 50px;
   padding-top: 10px;
@@ -20,14 +28,44 @@
 
 p {
   text-align: left;
+  padding-right: 80px;
+  padding-left: 80px;
 }
 .section1 {
-  background-color:lightcoral;
+  background-color:lightsalmon;
+  width: 100%;
+  text-align: center;
 }
 .introduction{ 
   text-align: center;
-  background-color: palegoldenrod;
+  background-color:lightsalmon;
 }
 body {
-  background-color: lightblue;
+  background-color:floralwhite;
+}
+
+.map2{
+  width: 100%;
+  align-content: center;
+}
+
+.description h2,
+h1 {
+    margin-top: 0px;
+}
+
+.description-right {
+  padding-left: 20px;
+}
+
+.description-left {
+  padding-right: 20px;
+}
+
+.pure-g {
+  margin-bottom: 25px;
+}
+
+.small-font {
+  font-size: 12px;
 }

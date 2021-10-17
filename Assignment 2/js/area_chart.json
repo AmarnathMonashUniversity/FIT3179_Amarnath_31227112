@@ -1,12 +1,74 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title":"Migrated Students at each State in Australia",
+  "title":"Magnitude of Migrated Students coming from various Countries",
+   "width": 450,
+    "height": 600,
+    "background":"antiquewhite",
   "data": {
-    "url": ""
+    "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data1.csv"
   },
-  "width": 400,
-  "height": 600,
-  "mark": "area",
+  "params": [
+    {
+      "name": "Country_selection",
+"bind": {
+  "input": "select",
+  "options": [
+    null,
+    "Bangladesh",
+    "Canada",
+    "China",
+    "Hong Kong",
+    "India",
+    "Indonesia",
+    "Japan",
+    "Korea, Republic of (South)",
+    "Malaysia",
+    "Nepal",
+    "Norway",
+    "Singapore",
+    "Taiwan",
+    "Thailand",
+    "United Kingdom",
+    "United States of America",
+    "Vietnam"
+],
+"labels":[
+"Show All",
+"Bangladesh",
+    "Canada",
+    "China",
+    "Hong Kong",
+    "India",
+    "Indonesia",
+    "Japan",
+    "Korea, Republic of (South)",
+    "Malaysia",
+    "Nepal",
+    "Norway",
+    "Singapore",
+    "Taiwan",
+    "Thailand",
+    "United Kingdom",
+    "United States of America",
+    "Vietnam"
+],
+"name": "Country Selection: "
+} }
+  ],
+  "transform": [
+{"filter": "Country_selection == null || datum.Country1 == Country_selection"}
+],
+"selection": {
+        "Country_highlight": {
+          "type": "multi",
+          "fields": ["Country1"],
+          "bind": "legend"
+} 
+},
+  "mark": {"type":"area",
+  "line":true,
+  "point":true
+  },
   "encoding": {
     "x": {
       "field": "Year",
@@ -19,7 +81,7 @@
     },
     "color": {
       "type":"nominal",
-      "field": "State",
+      "field": "Country1",
       "scale": {
         "domain": [
           "Bangladesh",
@@ -40,10 +102,19 @@
             "United States of America",
             "Vietnam"
         ],
-        "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
+        "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080","#008080","#CD7F32","#FFD580","#E37383","#93C572","#7C3030","#F2D2BD","#CCCCFF"]
       },
       "title": "Country"        
-    }
+    },
+    "opacity": {
+      "condition": {"selection": "Country_highlight", "value": 1.0},
+      "value": 0.2
+},
+"tooltip": [
+{"field": "Country1", "type": "nominal"},
+{"field": "Students", "type": "quantitative", "format": ","},
+{"field": "Year", "type": "nominal"}
+]
   },
   "config": {}
 }

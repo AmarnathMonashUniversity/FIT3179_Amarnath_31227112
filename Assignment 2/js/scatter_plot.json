@@ -1,40 +1,100 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 600,
-    "title": "International Students Travelling To Australia",
-    "data": {
-      "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 600,
+  "background":"antiquewhite",
+  "title": "International Students Travelling To Australia",
+  "data": {
+    "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
+  },
+  "params": [ {
+  "name": "State_selection",
+  "bind": {
+  "input": "select",
+  "options": [
+    null,
+    "New South Wales",
+    "Victoria",
+    "Queensland",
+    "South Australia",
+    "Western Australia",
+    "Tasmania",
+    "Northern Territory",
+    "Australian Capital Territory",
+    "Other Territories"
+],
+"labels":[
+  "Show All",
+  "New South Wales",
+  "Victoria",
+  "Queensland",
+  "South Australia",
+  "Western Australia",
+  "Tasmania",
+  "Northern Territory",
+  "Australian Capital Territory",
+  "Other Territories"
+],
+"name": "State Selection: " }
+} ],
+"transform": [
+  {"filter": "State_selection == null || datum.State == State_selection"} 
+  ],
+  "selection": {
+    "State_highlight": {
+      "type": "multi",
+      "fields": ["State"],
+      "bind": "legend"
+} },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Enrolment",
+      "type": "quantitative",
+      "scale": {"zero": true}
     },
-    "mark": "circle",
-    "encoding": {
-      "x": {
-        "field": "Enrolment",
-        "type": "quantitative",
-        "scale": {"zero": false}
-      },
-      "y": {
-        "field": "Commencement",
-        "type": "quantitative",
-        "scale": {"zero": false}
-      },
-      "color": {"field": "State", "type": "nominal",
-        "scale": {
-          "domain": [
-            "New South Wales",
-            "Victoria",
-            "Queensland",
-            "South Australia",
-            "Western Australia",
-            "Tasmania",
-            "Northern Territory",
-            "Australian Capital Territory",
-            "Other Territories"
-          ],
-          "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
-        }
-      },
-      "shape":{"field": "State", "type": "nominal"},
-      "size": {"field": "Enrolment", "type": "quantitative"}
-    }
-  }
+    "y": {
+      "field": "Commencement",
+      "type": "quantitative",
+      "scale": {"zero": true}
+    },
+    "color": {"field": "State", "type": "nominal",
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory",
+          "Other Territories"
+        ],
+        "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "State_highlight", "value": 1.0},
+      "value": 0.2
+    },
+    "shape":{"field": "State", "type": "nominal"},
+    "size": {"field": "Enrolment", "type": "quantitative"},
+    "tooltip": [
+    {"field": "State", "type": "nominal"},
+    {"field": "Enrolment", "type": "quantitative", "format": ","}, 
+    {"field": "Commencement", "type": "quantitative", "format": ","}, 
+    {"field": "Year", "type": "nominal"}, 
+    {"field": "NSW", "type": "quantitative", "format": ",","title":"Students transferred from NSW"},
+    {"field": "VIC", "type": "quantitative", "format": ",","title":"Students transferred from VIC"},
+    {"field": "QLD", "type": "quantitative", "format": ",","title":"Students transferred from QLD"},
+    {"field": "SA", "type": "quantitative", "format": ",","title":"Students transferred from SA"},
+    {"field": "WA", "type": "quantitative", "format": ",","title":"Students transferred from WA"},
+    {"field": "TAS", "type": "quantitative", "format": ",","title":"Students transferred from TAS"},
+    {"field": "NT", "type": "quantitative", "format": ",","title":"Students transferred from NT"},
+    {"field": "ACT", "type": "quantitative", "format": ",","title":"Students transferred from ACT"},
+    {"field": "NAT", "type": "quantitative", "format": ",","title":"Students transferred from NAT"} 
+  ]
+  },
+  "config": {}
+}

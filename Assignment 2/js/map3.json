@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
     "title": " Domestic states that have Students entering Australia for higher studies",
-    "width": 800,
+    "width": 890,
     "height": 600,
+    "background":"antiquewhite",
     "params": [
         {
           "name": "Year_selection",

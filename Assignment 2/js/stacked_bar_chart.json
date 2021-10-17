@@ -1,11 +1,51 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 600,
+    "background":"antiquewhite",
     "title":"Migrated Students at each State in Australia",
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data4.csv"
     },
-    "width": 400,
-    "height": 600,
+    "params": [ {
+      "name": "State_selection",
+      "bind": {
+      "input": "select",
+      "options": [
+        null,
+        "New South Wales",
+        "Victoria",
+        "Queensland",
+        "South Australia",
+        "Western Australia",
+        "Tasmania",
+        "Northern Territory",
+        "Australian Capital Territory",
+        "Other Territories"
+    ],
+    "labels":[
+      "Show All",
+      "New South Wales",
+      "Victoria",
+      "Queensland",
+      "South Australia",
+      "Western Australia",
+      "Tasmania",
+      "Northern Territory",
+      "Australian Capital Territory",
+      "Other Territories"
+    ],
+    "name": "State Selection: " }
+    } ],
+    "transform": [
+      {"filter": "State_selection == null || datum.State == State_selection"} 
+      ],
+      "selection": {
+        "State_highlight": {
+          "type": "multi",
+          "fields": ["State"],
+          "bind": "legend"
+    } },
     "mark": "bar",
     "encoding": {
       "x": {
@@ -35,7 +75,16 @@
           "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
         },
         "title": "State"        
-      }
+      },
+      "opacity": {
+        "condition": {"selection": "State_highlight", "value": 1.0},
+        "value": 0.2
+      },
+      "tooltip": [
+        {"field": "State", "type": "nominal"},
+        {"field": "Students", "type": "quantitative", "format": ","},
+        {"field": "Year", "type": "nominal"}
+        ]
     },
     "config": {}
   }

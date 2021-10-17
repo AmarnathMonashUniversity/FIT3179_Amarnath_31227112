@@ -1,0 +1,105 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data1.csv"},
+    "title": "An overview of migrated students coming into Australia from various countries",
+    "width": 400,
+    "height": 400,
+    "background":"antiquewhite",
+    "params": [
+      {
+        "name": "Country_selection",
+  "bind": {
+    "input": "select",
+    "options": [
+      null,
+      "Bangladesh",
+      "Canada",
+      "China",
+      "Hong Kong",
+      "India",
+      "Indonesia",
+      "Japan",
+      "Korea, Republic of (South)",
+      "Malaysia",
+      "Nepal",
+      "Norway",
+      "Singapore",
+      "Taiwan",
+      "Thailand",
+      "United Kingdom",
+      "United States of America",
+      "Vietnam"
+  ],
+  "labels":[
+  "Show All",
+  "Bangladesh",
+      "Canada",
+      "China",
+      "Hong Kong",
+      "India",
+      "Indonesia",
+      "Japan",
+      "Korea, Republic of (South)",
+      "Malaysia",
+      "Nepal",
+      "Norway",
+      "Singapore",
+      "Taiwan",
+      "Thailand",
+      "United Kingdom",
+      "United States of America",
+      "Vietnam"
+  ],
+  "name": "Country Selection: "
+  } }
+    ],
+    "transform": [
+  {"filter": "Country_selection == null || datum.Country1 == Country_selection"}
+  ],
+    "selection": {
+          "Country_highlight": {
+            "type": "multi",
+            "fields": ["Country1"],
+            "bind": "legend"
+  } 
+  },
+    "mark": {"type": "arc", "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "Students", "type": "quantitative"},
+      "color": {"field": "Country1", "type": "nominal",
+      "scale": {
+          "domain": [
+            "Bangladesh",
+              "Canada",
+              "China",
+              "Hong Kong",
+              "India",
+              "Indonesia",
+              "Japan",
+              "Korea, Republic of (South)",
+              "Malaysia",
+              "Nepal",
+              "Norway",
+              "Singapore",
+              "Taiwan",
+              "Thailand",
+              "United Kingdom",
+              "United States of America",
+              "Vietnam"
+          ],
+          "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080","#008080","#CD7F32","#FFD580","#E37383","#93C572","#7C3030","#F2D2BD","#CCCCFF"]
+        },
+        "title": "Country"        
+      },
+      "opacity": {
+        "condition": {"selection": "Country_highlight", "value": 1.0},
+        "value": 0.2
+  },
+  "tooltip": [
+  {"field": "Country1", "type": "nominal", "title":"Country/Nationality"},
+  {"field": "Students", "type": "quantitative", "format": ","},
+  {"field": "Year", "type": "nominal"}
+  ]
+    },
+    "config": {}
+  }

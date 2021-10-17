@@ -35,46 +35,122 @@
     Furthermore, you will be able to witness the impacts of COVID-19 pandemic on student migration and which are the major
     countries that are being affected and compare the student influx into Australia.
   </p>
-    <div class="page">
-      <div class="section1">
-        <h2>Map of Student Migration into Australia</h2>
-      </div>
-            <div id="map2"></div>
-            <script type="text/javascript">
-              var spec2 = "js/map2.json";
-              vegaEmbed('#map2', spec2).then(function(result) {
-              }).catch(console.error);
-            </script>
-            <br>
-      <div class="section1">
-        <h2>Quantity of student Migration at each state in Australia</h2>
-      </div>
-            <div id="stacked_bar_chart"></div>
-            <script type="text/javascript">
-              var spec3 = "js/stacked_bar_chart.json";
-              vegaEmbed('#stacked_bar_chart', spec3).then(function(result) {
-              }).catch(console.error);
-            </script>
-             <br>
-             <div class="section1">
-               <h2>Distribution of students in each state of Australia</h2>
-             </div>
-                   <div id="map3"></div>
-                   <script type="text/javascript">
-                     var spec4 = "js/map3.json";
-                     vegaEmbed('#map3', spec4).then(function(result) {
-                     }).catch(console.error);
-                   </script>
-                   <br>
-              <div class="section1">
-                <h2>Distribution of students in each state of Australia</h2>
-              </div>
-                    <div id="scatter_plot"></div>
-                    <script type="text/javascript">
-                      var spec5 = "js/scatter_plot.json";
-                      vegaEmbed('#scatter_plot', spec5).then(function(result) {
-                      }).catch(console.error);
-                    </script>
+  <div class="page">
+    <!-- pure grid group -->
+    <div class="section1">
+    <h2>Map of Student Migration into Australia</h2>
+    </div>
+    <div class="map2">
+      <div id="map2" class="vis-container"></div>
+    </div>
+   <!-- end pure grid group -->
+    <br>
+    <br>
+    <div class="section1">
+      <h2>Magnitude of student migration from various countries</h2>
+    </div>
+     <!-- pure grid group -->
+     <div class="pure-g">
+         <div class="pure-u-1-3">
+           <div class="description description-left">
+             <h2>This is the first section</h2>
+             <p>The first column is used for description while the next two columns are merged and used for visualisation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+           </div>
+         </div>
+         <div class="pure-u-2-3">
+           <div id="area_chart" class="vis-container"></div>
+         </div>
      </div>
+     <!-- end pure grid group -->
+     <br>
+     <br>
+     <!-- pure grid group -->
+     <div class="pure-g">
+         <div class="pure-u-2-3">
+           <div id="donut_chart"  class="vis-container"></div>
+         </div>
+         <div class="pure-u-1-3">
+           <div class="description description-right">
+             <h2>This is the second section</h2>
+             <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+           </div>
+         </div>
+     </div>
+     <!-- end pure grid group -->
+     <br>
+     <br>
+     <!-- pure grid group -->
+    <div class="section1">
+      <h2>Map of Student Migration into Australia</h2>
+    </div>
+      <div class="map3">
+        <div id="map3" class="vis-container"></div>
+      </div>
+     <!-- end pure grid group -->
+    <br>
+    <br>
+     <!-- pure grid group -->
+     <div class="pure-g">
+       <div class="pure-u-1-3">
+         <div class="description description-left">
+           <h2>This is the third section</h2>
+           <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+         </div>
+       </div>
+       <div class="pure-u-1-3">
+         <div id="stacked_bar_chart"  class="vis-container"></div>
+       </div>   
+     </div>
+     <!-- end pure grid group -->
+     <br>
+     <br>
+     <!-- pure grid group -->
+     <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="scatter_plot"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>This is the second section</h2>
+          <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+  </div>
+  <!-- end pure grid group -->
+ 
+   </div> <!-- end page -->
+    
+ <script type="text/javascript">
+   var specVis1 = "js/map2.json";
+   var specVis2 = "js/area_chart.json";
+   var specVis3 = "js/donut_chart.json";
+   var specVis4 = "js/map3.json";
+   var specVis5 = "js/stacked_bar_chart.json";
+   var specVis6 = "js/scatter_plot.json";
+
+   vegaEmbed('#map2', specVis1, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+
+   vegaEmbed('#area_chart', specVis2, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+
+   vegaEmbed('#donut_chart', specVis3, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+   
+    vegaEmbed('#map3', specVis4, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+ 
+   vegaEmbed('#stacked_bar_chart', specVis5, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+ 
+   vegaEmbed('#scatter_plot', specVis6, {"actions": false}).then(function(result) {
+     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+   }).catch(console.error);
+ </script>
 </body>
 </html>
