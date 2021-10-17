@@ -1,7 +1,6 @@
 .body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family:'Source Helvetica', sans-serif;
 }
-
 h1 {
   font-weight: 900;
 }
@@ -16,7 +15,7 @@ h1 {
   margin: auto;
   padding: 50px;
   padding-top: 10px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Helvetica', sans-serif;
 }
 
 .hr3 {
@@ -27,18 +26,26 @@ h1 {
 }
 
 p {
-  text-align: left;
-  padding-right: 80px;
-  padding-left: 80px;
+  text-align:left;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .section1 {
   background-color:lightsalmon;
   width: 100%;
   text-align: center;
 }
-.introduction{ 
+.introduction1{ 
   text-align: center;
   background-color:lightsalmon;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.introduction2{
+  text-align: left;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 body {
   background-color:floralwhite;
