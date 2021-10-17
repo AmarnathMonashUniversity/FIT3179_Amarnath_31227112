@@ -1,6 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
-  "title": "Countries that have Students entering Australia for higher studies",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 890,
   "height": 600,
   "background":"antiquewhite",

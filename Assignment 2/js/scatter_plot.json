@@ -3,7 +3,6 @@
   "width": 400,
   "height": 400,
   "background":"antiquewhite",
-  "title": "International Students Travelling To Australia",
   "data": {
     "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
   },

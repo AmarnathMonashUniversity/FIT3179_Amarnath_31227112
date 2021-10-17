@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data1.csv"},
-    "title": "An overview of migrated students coming into Australia from various countries",
     "width": 400,
     "height": 400,
     "background":"antiquewhite",

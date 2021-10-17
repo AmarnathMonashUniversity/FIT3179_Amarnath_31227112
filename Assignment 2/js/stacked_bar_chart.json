@@ -3,7 +3,6 @@
     "width": 450,
     "height": 600,
     "background":"antiquewhite",
-    "title":"Migrated Students at each State in Australia",
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data4.csv"
     },
