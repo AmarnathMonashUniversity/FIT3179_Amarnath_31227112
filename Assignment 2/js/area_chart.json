@@ -1,19 +1,49 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 300, "height": 200,
-    "data": {"url": ""},
-    "mark": "area",
-    "encoding": {
-      "x": {
-        "timeUnit": "yearmonth", "field": "date",
-        "axis": {"format": "%Y"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title":"Migrated Students at each State in Australia",
+  "data": {
+    "url": ""
+  },
+  "width": 400,
+  "height": 600,
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal"
+    },
+    "y": {
+      "field":"Students",
+      "type":"quantitative",
+      "aggregate":"sum"
+    },
+    "color": {
+      "type":"nominal",
+      "field": "State",
+      "scale": {
+        "domain": [
+          "Bangladesh",
+            "Canada",
+            "China",
+            "Hong Kong",
+            "India",
+            "Indonesia",
+            "Japan",
+            "Korea, Republic of (South)",
+            "Malaysia",
+            "Nepal",
+            "Norway",
+            "Singapore",
+            "Taiwan",
+            "Thailand",
+            "United Kingdom",
+            "United States of America",
+            "Vietnam"
+        ],
+        "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
       },
-      "y": {
-        "aggregate": "sum", "field": "count"
-      },
-      "color": {
-        "field": "series",
-        "scale": {"scheme": "category20b"}
-      }
+      "title": "Country"        
     }
-  }
+  },
+  "config": {}
+}

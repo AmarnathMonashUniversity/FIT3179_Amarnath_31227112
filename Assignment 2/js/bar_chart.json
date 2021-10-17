@@ -66,11 +66,9 @@
       }}
         ],
       "transform": [
-        {"fold": ["2002", "2003","2004","2005","2006","2007","208","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021"]},
-        
-          {
-                "calculate": "datum['2002'] * 10000","as": "Scaled Students"          
-          }],
+          {     "filter": "datum['2002'] > Year_Above"},
+                {"calculate": "datum['2002'] * 10000","as": "Scaled Students"}          
+          ],
       "selection": {
             "nationality_highlight": {
             "type": "multi",
@@ -86,7 +84,7 @@
       "title": "Country",
       "axis": {"tickCount":7}
 }, "y": {
-      "field": "year",
+      "field":"Scaled Students",
       "type": "quantitative",
       "title":"Number of students",
       "axis": {"tickCount": 10}

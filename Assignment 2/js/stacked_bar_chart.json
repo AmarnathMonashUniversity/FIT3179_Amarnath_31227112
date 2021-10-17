@@ -4,7 +4,8 @@
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Data4.csv"
     },
-    "width":"container",
+    "width": 400,
+    "height": 600,
     "mark": "bar",
     "encoding": {
       "x": {
@@ -31,7 +32,7 @@
             "Australian Capital Territory",
             "Other Territories"
           ],
-          "range": ["#0D47A1","#F2870F","#EA4BEC","#00C3BF","#9E00C3","#C30000","#797979","#26C20D","#1E6413"]
+          "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
         },
         "title": "State"        
       }

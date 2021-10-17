@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 400,
+    "width": 400,
+    "height": 600,
     "title": "International Students Travelling To Australia",
     "data": {
       "url": "https://raw.githubusercontent.com/AmarnathMonashUniversity/FIT3179_Amarnath_31227112/main/Assignment%202/data/Map_2.csv"
@@ -18,7 +18,22 @@
         "type": "quantitative",
         "scale": {"zero": false}
       },
-      "color": {"field": "State", "type": "nominal"},
+      "color": {"field": "State", "type": "nominal",
+        "scale": {
+          "domain": [
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory",
+            "Other Territories"
+          ],
+          "range": ["#1E90FF","#9370DB","#DC143C","#FF69B4","#FF8C00","#9ACD32","#CD853F","#FFD700","#808080"]
+        }
+      },
       "shape":{"field": "State", "type": "nominal"},
       "size": {"field": "Enrolment", "type": "quantitative"}
     }
